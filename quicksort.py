@@ -2,12 +2,63 @@
 Input a list.
 Output a sorted list."""
 
+
 def quicksort(array):
-    for i in range(len(array)):
-        if array[i] > array[len(array)-1-i]:
-            
-            #print(array[i] , array[len(array)-1-i])
+    i = len(array) - 1
+    j = 0
+    b = True
+    while b == True:
+        if i != j:
+            if array[i] <= array[j]:
+                f = array[j]
+                l = array[i]
+                p = array[i - 1]
+                array[j] = p
+                array[i] = f
+                array[i - 1] = l
+                i -= 1
+            else:
+                j += 1
+        else:
+            b = False
+    k = i
+    i = i - 2
+    j = 0
+    b = True
+    while b == True:
+        if i != j:
+            if array[i] <= array[j]:
+                f = array[j]
+                l = array[i]
+                p = array[i - 1]
+                array[j] = p
+                array[i] = f
+                array[i - 1] = l
+                i -= 1
+            else:
+                j += 1
+        else:
+            b = False
+    i = len(array) - 1
+    j = k + 1
+    b = True
+    while b == True:
+        if i != j:
+            if array[i] <= array[j]:
+                f = array[j]
+                l = array[i]
+                p = array[i - 1]
+                array[j] = p
+                array[i] = f
+                array[i - 1] = l
+                i -= 1
+            else:
+                j += 1
+        else:
+            b = False
+
     return array
+
 
 # 21 4	1	3	9	20	25	6	21	14
 # 21 4	1	3	9	20	25	6	14	21
